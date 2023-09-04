@@ -56,6 +56,7 @@ function setThemeByTime() {
         document.body.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
         currentTheme = 'dark';
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i> Normal Mode';
     }
 }
 
@@ -74,7 +75,7 @@ function updateButton() {
 
 // On page load
 if (currentTheme === 'dark') {
-    document.body.setAttribute('data-theme', 'dark');
+    document.body.setAttribute('data-theme', 'dark'); 
     updateButton();
 }
 
