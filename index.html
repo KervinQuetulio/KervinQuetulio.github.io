@@ -1,28 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kervs Quetulio - Personal Portfolio</title>
+    <title>Kervs Quetulio</title>
+    <!-- Tailwind CSS CDN -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 5%;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        li:hover .project-overlay {
+            display: flex;
+        }
+ 
+        /* Dark Mode */
+        [data-theme="dark"] {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        [data-theme="dark"] .bg-yellow-500 {
+            background-color: #333333;
+        }
+
+        [data-theme="dark"] .text-black {
+            color: #e0e0e0;
+        }
+
+        [data-theme="dark"] .text-gray-900 {
+            color: #e0e0e0;
+        }
+
+        [data-theme="dark"] .text-yellow-500 {
+            color: #fbc02d;
+        }
+
+        [data-theme="dark"] .border {
+            border-color: #555;
+        }
+
+        [data-theme="dark"] .bg-black {
+            background-color: #333;
+        }
+
+        [data-theme="dark"] .hover\:bg-gray-800:hover {
+            background-color: #444 !important;
+        }
+
+        #backToTop {
+            transition: opacity 0.5s;
         }
     </style>
-</head>
-<body>
 
-<h1>Welcome to My Portfolio</h1>
-<p>Hi, I'm [Kervs Quetulio]. Web Developer with a passion for creating amazing websites.</p>
-<h2>My Projects:</h2>
-<ul>
-    <li><a href="#">Project 1</a></li>
-    <li><a href="#">Project 2</a></li> 
-</ul>
-<h2>Contact Me:</h2>
-<p>Email: quetuliokervin@gmail.com</p> 
+
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <button id="themeToggle"
+        class="fixed top-4 right-4 z-50 p-2 rounded bg-yellow-500 text-black hover:bg-yellow-400 focus:outline-none">
+        <i class="fas fa-moon"></i> Dark Mode
+    </button>
+
+
+    <!-- Hero section -->
+    <section class="h-screen bg-yellow-500 flex flex-col justify-center items-center text-black">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Kervs Quetulio</h1>
+        <p class="text-xl sm:text-1xl lg:text-2xl">Fullstack Developer</p>
+        <p class="mt-4 text-lg sm:text-xl">Coding from Manila to the Mainframe</p>
+        <a href="#projects"
+            class="mt-6 px-6 py-3 bg-black text-yellow-500 rounded-lg font-semibold hover:bg-gray-800 transition">See My
+            Projects</a>
+    </section>
+
+    <!-- Projects section -->
+    <section id="projects" class="p-10">
+        <h2 class="text-center text-4xl font-bold text-gray-900">My Projects</h2>
+        <ul class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
+            <li>
+                <a href="#"
+                    class="block p-6 border rounded-lg hover:shadow-lg transition transform hover:scale-105 relative">
+                    <img src="https://via.placeholder.com/150" alt="Project Thumbnail" class="mb-4 rounded">
+                    <span class="block text-sm mb-2 font-semibold text-black bg-yellow-500 py-1 px-2 rounded">Web
+                        Development</span>
+                    <h3 class="text-xl font-semibold text-yellow-500 mb-4">Project 1</h3>
+                    <p>Description of project 1.</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="block p-6 border rounded-lg hover:shadow-lg transition transform hover:scale-105 relative">
+                    <img src="https://via.placeholder.com/150" alt="Project Thumbnail" class="mb-4 rounded">
+                    <span class="block text-sm mb-2 font-semibold text-black bg-yellow-500 py-1 px-2 rounded">Mobile
+                        Development</span>
+                    <h3 class="text-xl font-semibold text-yellow-500 mb-4">Project 2</h3>
+                    <p>Description of project 2.</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="block p-6 border rounded-lg hover:shadow-lg transition transform hover:scale-105 relative">
+                    <img src="https://via.placeholder.com/150" alt="Project Thumbnail" class="mb-4 rounded">
+                    <span class="block text-sm mb-2 font-semibold text-black bg-yellow-500 py-1 px-2 rounded">Cloud
+                        Native Development</span>
+                    <h3 class="text-xl font-semibold text-yellow-500 mb-4">Project 3</h3>
+                    <p>Description of project 3.</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="block p-6 border rounded-lg hover:shadow-lg transition transform hover:scale-105 relative">
+                    <img src="https://via.placeholder.com/150" alt="Project Thumbnail" class="mb-4 rounded">
+                    <span class="block text-sm mb-2 font-semibold text-black bg-yellow-500 py-1 px-2 rounded">Data
+                        Visualization</span>
+                    <h3 class="text-xl font-semibold text-yellow-500 mb-4">Project 4</h3>
+                    <p>Description of project 4.</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="block p-6 border rounded-lg hover:shadow-lg transition transform hover:scale-105 relative">
+                    <img src="https://via.placeholder.com/150" alt="Project Thumbnail" class="mb-4 rounded">
+                    <span
+                        class="block text-sm mb-2 font-semibold text-black bg-yellow-500 py-1 px-2 rounded">Application
+                        Integration</span>
+                    <h3 class="text-xl font-semibold text-yellow-500 mb-4">Project 5</h3>
+                    <p>Description of project 5.</p>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- Contact section -->
+    <section class="bg-yellow-500 text-black py-20">
+        <h2 class="text-center text-4xl font-bold mb-10">Contact Me</h2>
+        <p class="text-center text-xl mb-10">Interested in working with me? Reach out!</p>
+
+        <form class="w-full max-w-lg mx-auto" name="myForm" action="https://formspree.io/f/xvojrrjl" method="POST">
+            <div class="mb-4">
+                <input type="text" class="w-full p-3 mb-4 border rounded" id="fullName" name="fullName"
+                    placeholder="Full Name" required>
+            </div>
+
+            <div class="mb-4">
+                <input type="email" class="w-full p-3 mb-4 border rounded" id="email" name="email"
+                    placeholder="Email Address" required>
+            </div>
+
+            <div class="mb-4">
+                <input type="text" class="w-full p-3 mb-4 border rounded" id="CompanyName" name="CompanyName"
+                    placeholder="Company Name" required>
+            </div>
+
+            <div class="mb-4">
+                <input type="number" class="w-full p-3 mb-4 border rounded" id="ContactNumber" name="ContactNumber"
+                    placeholder="Contact Number" required>
+            </div>
+
+            <div class="mb-4">
+                <textarea class="w-full p-3 mb-4 border rounded" rows="5" name="Message"
+                    placeholder="Your message here.." required></textarea>
+            </div>
+
+            <div class="text-center">
+                <button class="bg-black text-yellow-500 hover:bg-gray-700 px-4 py-2 rounded font-bold"
+                    type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+    <button id="backToTop"
+        class="fixed bottom-10 right-10 p-2 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 focus:outline-none opacity-0 transition-opacity"
+        style="z-index: 1000;">&uarr;</button>
+
+
+
+    <script src="main.js"></script>
+
+
 
 </body>
+
 </html>
